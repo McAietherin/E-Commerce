@@ -1,0 +1,30 @@
+@mixin flex($ai: start, $jc: start, $gap: normal, $fd: row) {
+    display: flex;
+    align-items: $ai;
+    justify-content: $jc;
+    flex-direction: $fd;
+    gap: $gap;
+}
+
+@mixin position($ps: static, $tp: auto, $lt: auto, $zi: 0) {
+    position: $ps;
+    top: $tp;
+    left: $lt;
+    z-index: $zi;
+}
+
+@mixin font($fw, $fs: 16px) {
+    font-weight: $fw;
+    font-size: $fs;
+}
+
+@mixin h2() {
+    font-size: 45px;
+    font-weight: 630;
+    line-height: 55px;
+}
+
+@mixin grid($val){
+    display: grid;
+    grid-template-columns: repeat($val, 1fr);
+}
