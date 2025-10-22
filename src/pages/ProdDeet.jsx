@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { products } from '../assets/Data'
 import Star from '../assets/Star'
+import ProdCard from '../assets/ProdCard'
 
 function ProdDeet() {
   const scrollYRef = useRef(0)
@@ -153,31 +154,13 @@ function ProdDeet() {
           ) : (
             <div className="prods">
               {relatedProducts.map(prod => (
-                <Link to={`/products/${prod.key}`} key={prod.key} className="prod">
-                  <div className="pimg">
-                    <div className="pbio">{prod.pbio}</div>
-                    <div className="pdeal">-{prod.pdeal}</div>
-                    <img src={prod.imgsrc} alt={prod.alt} />
-                    <div className="wished"><i className="bi bi-suit-heart"></i></div>
-                  </div>
-                  <div className='ptext'>
-                    <h3>{prod.title}</h3>
-                    <div className="pprice">
-                      <h2>Rs. {prod.price}</h2>
-                      <del>Rs. {prod.originalPrice}</del>
-                    </div>
-                    <div className="stars">
-                      <span className='str'><Star hearts={prod.hearts} /></span>
-                      <p className="amt">({prod.reviews})</p>
-                    </div>
-                    <h6>Sold by <strong>{prod.seller}</strong></h6>
-                  </div>
-                </Link>
+                <ProdCard key={prod.key} product={prod} />
               ))}
             </div>
           )}
         </section>
       </section>
+
     </section>
   )
 }

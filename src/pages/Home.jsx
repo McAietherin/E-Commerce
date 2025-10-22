@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { products } from '../assets/Data'
 import Star from '../assets/Star'
+import ProdCard from '../assets/ProdCard'
 
 function Home() {
   return (
@@ -48,35 +49,49 @@ function Home() {
           <p><Link to={'/products'}>View All <i className="bi bi-chevron-right"></i></Link></p>
         </div>
         <div className="prods">
-          {products.map(prod => (
-            <Link to={`/products/${prod.key}`} key={prod.key} className="prod">
-              <div className="pimg">
-                <div className="pbio">{prod.pbio}</div>
-                <div className="pdeal">-{prod.pdeal}</div>
-                <img src={prod.imgsrc} alt={prod.alt} />
-                <div className="wished"><i class="bi bi-suit-heart"></i></div>
-              </div>
-              <div className='ptext'>
-                <h3>{prod.title}</h3>
-                <div className="pprice">
-                  <h2>Rs. {prod.price}</h2>
-                  <del>Rs. {prod.originalPrice}</del>
-                </div>
-                <div className="stars">
-                  <span className='str'><Star hearts={prod.hearts} /></span>
-                  <p className="amt">({prod.reviews})</p>
-                </div>
-                <h6>Sold by <strong>{prod.seller}</strong></h6>
-              </div>
-            </Link>
+          {products.slice(0, 5).map(prod => (
+            <ProdCard key={prod.key} product={prod} />
           ))}
         </div>
-
+      </section>
+      <section id='flash' className='mid'>
+        <div className="right">
+          <h3>⚡ Flash Sale</h3>
+          <p>Up to 70% off on selected items</p>
+        </div>
+        <div className="left">
+          <h2>Ends in 2:12:12</h2>
+          <p>Hours:Mins:Secs</p>
+        </div>
       </section>
       <section id="saprods" className='mid'>
         <div className="view">
           <h2>Sale Products</h2>
           <p><Link to={'/categories'}>View All <i className="bi bi-chevron-right"></i></Link></p>
+        </div>
+        <div className="prods">
+          {products
+            .filter(prod => prod.pdeal && prod.pdeal.trim() !== '').slice(0, 10)
+            .map(prod => (
+              <ProdCard key={prod.key} product={prod} />
+            ))}
+        </div>
+      </section>
+      <section id='tres' className='mid'>
+        <div className="trescont">
+          <h2>🚚</h2>
+          <h3>Free Shipping</h3>
+          <p>On orders over $50</p>
+        </div>
+        <div className="trescont">
+          <h2>🔒</h2>
+          <h3>Secure Payments</h3>
+          <p>100% safe transactions</p>
+        </div>
+        <div className="trescont">
+          <h2>↩️</h2>
+          <h3>Easy Returns</h3>
+          <p>30-day money back guarantee</p>
         </div>
       </section>
     </>
