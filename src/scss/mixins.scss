@@ -18,12 +18,6 @@
     font-size: $fs;
 }
 
-@mixin h2() {
-    font-size: 45px;
-    font-weight: 630;
-    line-height: 55px;
-}
-
 @mixin grid($val){
     display: grid;
     grid-template-columns: repeat($val, 1fr);

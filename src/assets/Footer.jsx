@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer>
       <div className="mid">
-        <div id='footgrid'>
+        <div id="footgrid">
           <ul>
             <li>
               <p>About Commerco</p>
@@ -16,7 +16,7 @@ function Footer() {
           </ul>
           <ul>
             <li>
-              <p>Help & Support</p>
+              <p>Help &amp; Support</p>
             </li>
             <li>Customer Service</li>
             <li>Contact Us</li>
@@ -25,12 +25,12 @@ function Footer() {
           </ul>
           <ul>
             <li>
-              <p>Selling</p>
+              <p>Finance</p>
             </li>
-            <li>Seller Center</li>
-            <li>Seller Fees</li>
+            <li>Provider Center</li>
+            <li>Provider Fees</li>
             <li>Advertising</li>
-            <li>Seller Handbook</li>
+            <li>Provider Handbook</li>
           </ul>
           <ul>
             <li>
@@ -45,27 +45,27 @@ function Footer() {
             <li>
               <p>Download App</p>
             </li>
-            <li id='app'><i class="bi bi-phone"></i> <>Get App</></li>
-            <li id='ios'>Available on iOS and Android</li>
+            <li id="app"><i className="bi bi-phone" /> Get App</li>
+            <li id="ios">Available on iOS and Android</li>
           </ul>
         </div>
         <div id="footgrid2">
           <div className="fgcont">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-5 h-5 text-primary flex-shrink-0" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail w-5 h-5 text-primary flex-shrink-0" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x={2} y={4} width={20} height={16} rx={2} /></svg>
             <div className="svdiv">
               <h6>Email</h6>
               <p>support@commerco.com</p>
             </div>
           </div>
           <div className="fgcont">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5 text-primary flex-shrink-0" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-phone w-5 h-5 text-primary flex-shrink-0" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg>
             <div className="svdiv">
               <h6>Phone</h6>
               <p>98-XXXXXXXX</p>
             </div>
           </div>
           <div className="fgcont">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin w-5 h-5 text-primary flex-shrink-0" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin w-5 h-5 text-primary flex-shrink-0" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx={12} cy={10} r={3} /></svg>
             <div className="svdiv">
               <h6>Address</h6>
               <p>Baagbazaar-8, Kathmandu, Nepal</p>
