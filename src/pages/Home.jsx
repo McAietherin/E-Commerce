@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { products } from '../assets/Data'
-import Star from '../assets/Star'
 import ProdCard from '../assets/ProdCard'
 
 function Home() {
@@ -17,33 +16,33 @@ function Home() {
           <p><Link to={'/categories'}>View All <i className="bi bi-chevron-right"></i></Link></p>
         </div>
         <div id="bcgrid">
-          <div className="bcgcont">
+          <Link to={'/categories/electronics'}><div className="bcgcont">
             <h3>📱</h3>
             <p>Electronics</p>
-          </div>
-          <div className="bcgcont">
+          </div></Link>
+          <Link to={'/categories/clothing'}><div className="bcgcont">
             <h3>👗</h3>
             <p>Fashion</p>
-          </div>
-          <div className="bcgcont">
+          </div></Link>
+          <Link to={'/categories/housing'}><div className="bcgcont">
             <h3>🏠</h3>
             <p>Home</p>
-          </div>
-          <div className="bcgcont">
+          </div></Link>
+          <Link to={'/categories/sports'}><div className="bcgcont">
             <h3>⚽</h3>
             <p>Sports</p>
-          </div>
-          <div className="bcgcont">
+          </div></Link>
+          <Link to={'/categories/beauty'}><div className="bcgcont">
             <h3>💄</h3>
             <p>Beauty</p>
-          </div>
-          <div className="bcgcont">
+          </div></Link>
+          <Link to={'/categories/toys'}><div className="bcgcont">
             <h3>🎮</h3>
             <p>Toys</p>
-          </div>
+          </div></Link>
         </div>
       </section>
-      <section id="feprods" className='mid'>
+      <section className='mid feprods'>
         <div className="view">
           <h2>Featured Products</h2>
           <p><Link to={'/products'}>View All <i className="bi bi-chevron-right"></i></Link></p>
@@ -67,7 +66,6 @@ function Home() {
       <section id="saprods" className='mid'>
         <div className="view">
           <h2>Sale Products</h2>
-          <p><Link to={'/categories'}>View All <i className="bi bi-chevron-right"></i></Link></p>
         </div>
         <div className="prods">
           {products

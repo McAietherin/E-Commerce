@@ -99,7 +99,7 @@ function ProdDeet() {
             </div>
             <div id="aqgrid">
               <div id="aqred"><i className="bi bi-cart2"></i> Add to Cart</div>
-              <div id="aqbynow">Buy Now</div>
+              <div className="aqbynow">Buy Now</div>
               <div className="aqsmol"><i className="bi bi-suit-heart"></i> Wishlist</div>
               <div className="aqsmol"><i className="bi bi-share"></i> Share</div>
             </div>

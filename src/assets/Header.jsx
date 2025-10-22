@@ -1,7 +1,25 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 function Header() {
+  const [searchText, setSearchText] = useState('')
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const handleSearch = () => {
+    if (!searchText.trim()) return
+
+    const encoded = encodeURIComponent(searchText.trim())
+    const path = location.pathname
+    const match = path.match(/^\/categories\/([^/]+)$/)
+    if (match) {
+      const categorySlug = match[1]
+      navigate(`/categories/${categorySlug}?search=${encoded}`)
+    } else {
+      navigate(`/products?search=${encoded}`)
+    }
+  }
+
   return (
     <div id='pegged'>
       <header>
@@ -23,9 +41,18 @@ function Header() {
           <div id="navsearch">
             <h3><Link to={'/'}>Commerco</Link><i className="bi bi-list" id='mobile'></i></h3>
             <div id='navinput'>
-              <input type="text" name="navsearch" id="navinp" placeholder='Search products, brands, and shops...'/>
-              <button id='pcbut'>Search</button>
-              <button id='mobbut'><i className="bi bi-search"></i></button>
+              <input
+                type="text"
+                name="navsearch"
+                id="navinp"
+                placeholder='Search products, brands, and shops...'
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+              />
+              <button id='pcbut' onClick={handleSearch}>Search</button>
+              <button id='mobbut' onClick={handleSearch}>
+                <i className="bi bi-search"></i>
+              </button>
             </div>
             <div id="icons">
               <button><Link to={'/wishlist'}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-heart w-5 h-5" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg></Link></button>
@@ -36,18 +63,17 @@ function Header() {
           <div id="categs">
             <ul>
               <li><Link to={'/categories'}>All Categories</Link></li>
-              <li>Electronics</li>
-              <li>Clothing</li>
-              <li>Home & Garden</li>
-              <li>Sports</li>
-              <li>Toys & Games</li>
-              <li>Beauty</li>
-              <li>Automotive</li>
+              <li><Link to="/categories/electronics">Electronics</Link></li>
+              <li><Link to="/categories/clothing">Clothing</Link></li>
+              <li><Link to="/categories/housing">Home & Garden</Link></li>
+              <li><Link to="/categories/sports">Sports</Link></li>
+              <li><Link to="/categories/toys">Toys & Games</Link></li>
+              <li><Link to="/categories/beauty">Beauty</Link></li>
+              <li><Link to="/categories/automotive">Automotive</Link></li>
             </ul>
           </div>
         </div>
       </nav>
-
     </div>
   )
 }
