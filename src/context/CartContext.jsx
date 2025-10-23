@@ -23,10 +23,12 @@ export function CartProvider({ children }) {
             ? { ...item, quantity: item.quantity + quantity }
             : item
         )
+      } else {
+        return [...prev, { ...product, quantity }]
       }
-      return [...prev, { ...product, quantity }]
     })
   }
+
 
   function removeFromCart(key) {
     setCart(prev => prev.filter(item => item.key !== key))

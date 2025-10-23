@@ -9,6 +9,7 @@ function ProdCard({ product }) {
     const [quantity, setQuantity] = useState(0)
     const { wishlist, toggleWishlist } = useWishlist()
     const isWished = wishlist.some(item => item.key === product.key)
+    const subTotal = product.price * quantity
 
     function handleWishlistClick(e) {
         e.preventDefault()
@@ -59,7 +60,7 @@ function ProdCard({ product }) {
             </div>
             <div className="hidden bsd">
                 <p>Subtotal</p>
-                <h2>Rs. </h2>
+                <h2>Rs. {subTotal}</h2>
             </div>
         </Link >
     )

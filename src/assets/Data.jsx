@@ -44,6 +44,135 @@ export const products = [
   },
   {
     key: 2,
+    pbio: "",
+    pdeal: "",
+    imgsrc: ["https://plus.unsplash.com/premium_photo-1675003663256-bfdc8b1acb2d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687", "https://plus.unsplash.com/premium_photo-1661306458041-9d6969661197?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"],
+    alt: "Dress",
+    hearts: "8",
+    title: "Ball gown with satin",
+    price: "3092",
+    originalPrice: "",
+    reviews: "2314",
+    seller: "TheDressors",
+    category: "Clothing",
+    sale: false,
+    stock: 45,
+    details: "A ball gown made of white satin and embedded jewels that is perfect for any ceremonies or occasions",
+    specs: {
+      color: {
+        ititle: "Colour",
+        ival: "White"
+      },
+      weight: {
+        ititle: "Weight",
+        ival: "800g"
+      },
+      warranty: {
+        ititle: "Warranty",
+        ival: "5 years"
+      },
+      durability: {
+        ititle: "Durability",
+        ival: "9 years"
+      },
+      type: {
+        ititle: "Type",
+        ival: "Satin"
+      },
+      size: {
+        ititle: "Dimensions",
+        ival: "4ft by 1ft"
+      },
+    },
+  },
+  {
+    key: 3,
+    pbio: "",
+    pdeal: "",
+    imgsrc: ["https://plus.unsplash.com/premium_photo-1676999260189-5412ac9aeb04?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=722", "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=688"],
+    alt: "IKEA Table",
+    hearts: "10",
+    title: "Sleek IKEA table imported straight from Sweden",
+    price: "12000",
+    originalPrice: "",
+    reviews: "98799",
+    seller: "IKEA",
+    category: "housing",
+    sale: false,
+    stock: 120,
+    details: "It is a classic table with sleek edges and high affordability that is a hallmark of an IKEA classic",
+    specs: {
+      color: {
+        ititle: "Colour",
+        ival: "Brown"
+      },
+      weight: {
+        ititle: "Weight",
+        ival: "5kg"
+      },
+      seater: {
+        ititle: "Seats",
+        ival: "5 people"
+      },
+      warranty: {
+        ititle: "Warranty",
+        ival: "5 years"
+      },
+      wood: {
+        ititle: "Wood",
+        ival: "Mahagony"
+      },
+      size: {
+        ititle: "Dimensions",
+        ival: "5m by 4m"
+      },
+    },
+  },
+  {
+    key: 4,
+    pbio: "Latest",
+    pdeal: "40%",
+    imgsrc: ["https://images.unsplash.com/photo-1570903886550-ec676b2e675f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735", "https://images.unsplash.com/photo-1570903935408-ca8c742ea640?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1374", "https://images.unsplash.com/photo-1673410328920-c945b5d18bbc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"],
+    alt: "Cactus",
+    hearts: "6",
+    title: "Cactus from dubai",
+    price: "2000",
+    originalPrice: "2888",
+    reviews: "646",
+    seller: "SaharanPlants",
+    category: "nature",
+    sale: true,
+    stock: 5,
+    details: "It is a cheap plant that needs little tending to but can still elevate the feel of your house. Brought straight from dubai, this simple cactus can immediately make your house more cozy",
+    specs: {
+      color: {
+        ititle: "Colour",
+        ival: "Green"
+      },
+      weight: {
+        ititle: "Weight",
+        ival: "20g"
+      },
+      origin: {
+        ititle: "Origin",
+        ival: "Dubai"
+      },
+      waterreq: {
+        ititle: "Water Required",
+        ival: "0.2oz/day"
+      },
+      species: {
+        ititle: "Species",
+        ival: "Cactaceae"
+      },
+      size: {
+        ititle: "Dimensions",
+        ival: "4.2cm"
+      },
+    },
+  },
+  {
+    key: 5,
     pbio: "New Arrival",
     pdeal: "30%",
     imgsrc: ["https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=627", "https://images.unsplash.com/photo-1612101678636-69a6daeb076e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=711"],
@@ -82,6 +211,49 @@ export const products = [
       size: {
         ititle: "Dimensions",
         ival: "4.2cm"
+      },
+    },
+  },
+  {
+    key: 6,
+    pbio: "Most Trusted",
+    pdeal: "5%",
+    imgsrc: ["https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=764", "https://images.unsplash.com/photo-1542282088-fe8426682b8f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"],
+    alt: "car",
+    hearts: "9",
+    title: "Ford Focus F150",
+    price: "200000",
+    originalPrice: "240000",
+    reviews: "564665",
+    seller: "MotorShowroom",
+    category: "Automotive",
+    sale: true,
+    stock: 2,
+    details: "The Ford Focus is a compact car manufactured by Ford Motor Company since 1999. It offers a sleek design, impressive performance, and a range of features. The Focus has a spacious interior with comfortable seating and a decent-sized cargo area. ",
+    specs: {
+      color: {
+        ititle: "Colour",
+        ival: "Silver"
+      },
+      mileage: {
+        ititle: "Mileage",
+        ival: "565"
+      },
+      charge: {
+        ititle: "Charging Time",
+        ival: "1.5hrs"
+      },
+      batlife: {
+        ititle: "Battery Life",
+        ival: "12 days"
+      },
+      version: {
+        ititle: "Version",
+        ival: "5.0.1"
+      },
+      speed: {
+        ititle: "Top Speed",
+        ival: "36km/h"
       },
     },
   },

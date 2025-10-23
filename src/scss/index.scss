@@ -245,6 +245,24 @@ nav {
             color: #e72413 !important;
         }
     }
+
+    #as {
+        text-align: end;
+
+        a {
+            margin-top: 3px;
+            padding: 8px;
+            color: #000000 !important;
+            @include font(100, 18px);
+            display: none;
+        }
+        .hr{
+            border: 1px solid #e8e8e8;
+            width: 83vw;
+            position: absolute;
+            left: 8.5vw;
+        }
+    }
 }
 
 #navinput {
@@ -794,10 +812,11 @@ footer {
 }
 
 .ess {
-    margin-top: 25px
+    margin-top: 25px;
+    width: 100%;
 }
 
-.hov:hover{
+.hov:hover {
     cursor: pointer;
 }
 
@@ -816,8 +835,80 @@ footer {
     }
 }
 
+.eees {
+    width: 100%;
+    @include flex(start, space-between, 30px);
+    position: relative;
+    margin-top: 20px;
+
+    .ptext {
+        width: 80%;
+    }
+
+    .ess {
+        margin-top: 0;
+    }
+}
+
+.ins2 {
+    padding: 22px;
+    width: 330px;
+    min-width: 350px;
+    border: 1px solid #e8e8e8;
+    position: sticky;
+    top: 190px;
+}
+
+.ins1 {
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 20px;
+    padding-bottom: 25px;
+    @include flex(stretch, start, 30px, column);
+
+    >div {
+        @include flex(stretch, start, 15px, column);
+    }
+
+    span {
+        @include flex(center, space-between);
+    }
+
+    p {
+        color: #000000 !important;
+        font-size: 17px !important;
+    }
+
+    .free {
+        color: #159d47 !important;
+    }
+}
+
+.ins {
+    @include flex(stretch, space-between, 30px, column);
+
+    ul {
+        list-style-type: none;
+        background-color: #f5f5f5;
+        padding: 18px;
+        @include flex(start, start, 8px, column);
+    }
+}
+
 .hidden {
     display: none;
+}
+
+.dssad {
+    @include flex(stretch, space-between, 20px, column);
+    text-align: center;
+}
+
+.total {
+    @include flex(center, space-between);
+
+    h2 {
+        color: #e72413;
+    }
 }
 
 .carters .prods {
@@ -863,20 +954,23 @@ footer {
         display: block;
     }
 
-    #incr{
+    #incr {
         @include flex(center, start, 23px);
-        div{
+
+        div {
             border: 1px solid #e8e8e8;
             border-radius: 5px;
             @include flex();
-            p{
+
+            p {
                 @include flex(center, center);
                 width: 38px;
                 aspect-ratio: 1/1;
                 font-size: 22px;
                 text-align: center;
             }
-            input{
+
+            input {
                 height: 38px;
                 width: 38px;
                 text-align: center;
@@ -884,14 +978,15 @@ footer {
                 font-size: 20px;
             }
         }
-        span{
+
+        span {
             width: 38px;
             aspect-ratio: 1/1;
             font-size: 21px;
             @include flex(center, center);
         }
 
-        span:hover{
+        span:hover {
             background-color: #fdecec;
             border-radius: 5px;
         }
@@ -899,6 +994,19 @@ footer {
 
     .bsd {
         @include flex(start, space-between, 10px, column);
+        width: fit-content;
+
+        p {
+            text-align: end;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: end;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
 
     .prod:hover {
@@ -993,6 +1101,10 @@ aside {
 
     .feprods {
         margin-top: 0;
+    }
+
+    .prods {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -1131,8 +1243,12 @@ aside {
 }
 
 @media (max-width:1250px) {
-    #catsg {
+    .prodi .prods {
         grid-template-columns: 1fr 1fr;
+    }
+
+    #catsg {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     #footgrid {
@@ -1154,6 +1270,14 @@ aside {
 }
 
 @media (max-width: 900px) {
+    .prodi .prods {
+        grid-template-columns: 1fr;
+    }
+
+    #catsg {
+        grid-template-columns: 1fr 1fr;
+    }
+
     #icons {
         display: none;
     }
@@ -1171,7 +1295,14 @@ aside {
 
         h3 {
             width: 100%;
+            @include flex(start, space-between);
+
+            span {
+                position: relative;
+                top: 5px;
+            }
         }
+
     }
 
     #mainimg {
@@ -1184,6 +1315,10 @@ aside {
 }
 
 @media (max-width: 700px) {
+    aside {
+        min-width: 225px;
+    }
+
     #catsg {
         grid-template-columns: 1fr;
     }
@@ -1211,6 +1346,18 @@ aside {
 }
 
 @media (max-width: 500px) {
+    aside {
+        width: 100%;
+    }
+
+    .prodi {
+        flex-direction: column;
+
+        .feprods {
+            width: 100%;
+        }
+    }
+
     #pcbut {
         display: none !important;
     }
@@ -1253,5 +1400,16 @@ aside {
     #avl {
         border-bottom: 1px solid #e8e8e8;
         padding-bottom: 20px;
+    }
+}
+
+
+@media (min-width: 900px) {
+    #as a {
+        display: none !important;
+    }
+
+    #as .hr{
+        display: none !important;
     }
 }

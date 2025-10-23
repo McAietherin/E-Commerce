@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 
 function Header() {
+  const [showCategories, setShowCategories] = useState(false)
+  const toggleCategories = () => {
+    setShowCategories(prev => !prev)
+  }
   const [searchText, setSearchText] = useState('')
   const navigate = useNavigate()
   const location = useLocation()
@@ -39,7 +43,19 @@ function Header() {
       <nav>
         <div className='mid'>
           <div id="navsearch">
-            <h3><Link to={'/'}>Commerco</Link><i className="bi bi-list" id='mobile'></i></h3>
+            <h3>
+              <Link to={'/'}><span>Commerco</span></Link>
+              <div id='as'>
+                <i className="bi bi-list" id='mobile' onClick={toggleCategories}></i>
+                <Link to={'/wishlist'} style={{ display: showCategories ? 'block' : 'none' }}><p>My wishlist</p></Link>
+                <p className="hr" style={{ display: showCategories ? 'block' : 'none' }}></p>
+                <Link to={'/mycart'} style={{ display: showCategories ? 'block' : 'none' }}><p>My Cart</p></Link>
+                <p className="hr" style={{ display: showCategories ? 'block' : 'none' }}></p>
+                <Link to={'/'} style={{ display: showCategories ? 'block' : 'none' }}><p>Account</p>
+                </Link>
+                <p className="hr" style={{ display: showCategories ? 'block' : 'none' }}></p>
+              </div>
+            </h3>
             <div id='navinput'>
               <input
                 type="text"
