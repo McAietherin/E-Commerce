@@ -3,10 +3,12 @@ import { Link, useParams } from 'react-router-dom'
 import { products } from '../assets/Data'
 import Star from '../assets/Star'
 import ProdCard from '../assets/ProdCard'
+import { useCart } from '../context/CartContext'
 
 function ProdDeet() {
+  const { addToCart } = useCart()
   const scrollYRef = useRef(0)
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(0)
   const { id } = useParams()
   const product = products.find(p => p.key === parseInt(id))
   const [selectedImage, setSelectedImage] = useState(product.imgsrc[0])
@@ -90,15 +92,15 @@ function ProdDeet() {
                   id="amtslct"
                   value={quantity}
                   onChange={(e) => {
-                    const val = Math.max(0, parseInt(e.target.value) || 0);
-                    setQuantity(val);
+                    const val = Math.max(0, parseInt(e.target.value) || 0)
+                    setQuantity(val)
                   }}
                 />
               </span>
               <p onClick={() => setQuantity(prev => prev + 1)}>+</p>
             </div>
             <div id="aqgrid">
-              <div id="aqred"><i className="bi bi-cart2"></i> Add to Cart</div>
+              <div className="aqred hov" onClick={() => addToCart(product, quantity)}><i className="bi bi-cart2"></i> Add to Cart</div>
               <div className="aqbynow">Buy Now</div>
               <div className="aqsmol"><i className="bi bi-suit-heart"></i> Wishlist</div>
               <div className="aqsmol"><i className="bi bi-share"></i> Share</div>

@@ -6,7 +6,6 @@ function Categories() {
     <>
       <section className='mid'>
         <div className="ctgtit">
-          <h1>Test</h1>
           <h1>All Categories</h1>
           <p>Browse through 16 categories to find what you need</p>
         </div>

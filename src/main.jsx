@@ -4,12 +4,18 @@ import './scss/index.scss'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import ScrollToTop from './assets/ScrollToTop.jsx'
+import { WishlistProvider } from './context/WishlistContext.jsx'
+import { CartProvider } from './context/CartContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <ScrollToTop />
-      <App />
-    </BrowserRouter>
+    <CartProvider>
+      <WishlistProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <App />
+        </BrowserRouter>
+      </WishlistProvider>
+    </CartProvider>
   </StrictMode>,
 )
