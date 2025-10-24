@@ -49,11 +49,11 @@ function Header() {
               <Link to={'/'}><span>Commerco</span></Link>
               <div id='as'>
                 <i className="bi bi-list" id='mobile' onClick={toggleCategories}></i>
-                <Link to={'/wishlist'} style={{ display: showCategories ? 'block' : 'none' }}><p>My wishlist</p></Link>
+                <Link to={'/wishlist'} style={{ display: showCategories ? 'block' : 'none' }}><p>My Wishlist</p></Link>
                 <p className="hr" style={{ display: showCategories ? 'block' : 'none' }}></p>
                 <Link to={'/mycart'} style={{ display: showCategories ? 'block' : 'none' }}><p>My Cart</p></Link>
                 <p className="hr" style={{ display: showCategories ? 'block' : 'none' }}></p>
-                <Link to={'/'} style={{ display: showCategories ? 'block' : 'none' }}><p>Account</p>
+                <Link to={'/'} style={{ display: showCategories ? 'block' : 'none' }}><p>Home Page</p>
                 </Link>
                 <p className="hr" style={{ display: showCategories ? 'block' : 'none' }}></p>
               </div>
