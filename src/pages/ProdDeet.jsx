@@ -4,6 +4,8 @@ import { products } from '../assets/Data'
 import Star from '../assets/Star'
 import ProdCard from '../assets/ProdCard'
 import { useCart } from '../context/CartContext'
+import { toast } from 'react-toastify'
+import { useWishlist } from '../context/WishlistContext'
 
 function ProdDeet() {
   const { addToCart } = useCart()
@@ -12,6 +14,9 @@ function ProdDeet() {
   const { id } = useParams()
   const product = products.find(p => p.key === parseInt(id))
   const [selectedImage, setSelectedImage] = useState(product.imgsrc[0])
+  const { wishlist, toggleWishlist } = useWishlist()
+  const isWished = wishlist.some(item => item.key === product.key)
+
   useEffect(() => {
     setSelectedImage(product.imgsrc[0]);
   }, [product])
@@ -25,6 +30,11 @@ function ProdDeet() {
     prod => prod.key !== product.key && prod.category === product.category
   )
 
+  function handleWishlistClick(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    toggleWishlist(product)
+  }
   return (
     <section className="proddeet mid">
       <p id='path'><Link to={'/'}>Home</Link> / <Link to={'/products'}>Products</Link> / {product.title}</p>
@@ -100,9 +110,19 @@ function ProdDeet() {
               <p onClick={() => setQuantity(prev => prev + 1)}>+</p>
             </div>
             <div id="aqgrid">
-              <div className="aqred hov" onClick={() => addToCart(product, quantity)}><i className="bi bi-cart2"></i> Add to Cart</div>
+              <div
+                className="aqred hov"
+                onClick={() => {
+                  if (quantity > 0) {
+                    addToCart(product, quantity)
+                    toast.success(`${quantity} ${product.alt} added to cart`)
+                  } else {
+                    toast.error("Please select at least 1 item before adding to cart.")
+                  }
+                }}
+              ><i className="bi bi-cart2"></i> Add to Cart</div>
               <div className="aqbynow">Buy Now</div>
-              <div className="aqsmol"><i className="bi bi-suit-heart"></i> Wishlist</div>
+              <div className="aqsmol" onClick={handleWishlistClick}><i className={`bi ${isWished ? 'bi-suit-heart-fill black' : 'bi-suit-heart'}`}></i> Wishlist</div>
               <div className="aqsmol"><i className="bi bi-share"></i> Share</div>
             </div>
           </div>

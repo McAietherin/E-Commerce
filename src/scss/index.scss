@@ -256,7 +256,8 @@ nav {
             @include font(100, 18px);
             display: none;
         }
-        .hr{
+
+        .hr {
             border: 1px solid #e8e8e8;
             width: 83vw;
             position: absolute;
@@ -766,6 +767,7 @@ footer {
         text-align: center;
         padding: 15px 0;
         transition: 0.21s;
+        cursor: pointer;
     }
 }
 
@@ -847,6 +849,12 @@ footer {
 
     .ess {
         margin-top: 0;
+    }
+
+    .prod:hover {
+        .addtc {
+            display: none !important;
+        }
     }
 }
 
@@ -936,8 +944,10 @@ footer {
     }
 
     .pimg {
-        aspect-ratio: 1/1;
         width: 100px;
+        height: 100px;
+        min-height: 100px;
+        min-width: 100px;
         border-radius: 5px;
     }
 
@@ -1036,6 +1046,7 @@ footer {
 .aqred {
     background-color: #e72413;
     color: #ffffff !important;
+    cursor: pointer;
 }
 
 #ds .view {
@@ -1168,6 +1179,23 @@ aside {
     }
 }
 
+.kj {
+    position: relative;
+}
+
+.count {
+    width: 15px;
+    height: 15px;
+    @include flex(center, center);
+    position: absolute;
+    background-color: #e72413;
+    color: #ffffff;
+    border-radius: 50%;
+    top: 0;
+    right: 2px;
+    font-size: 10px;
+}
+
 #spdesc,
 #rela {
     margin: 40px 0;
@@ -1206,6 +1234,10 @@ aside {
     }
 }
 
+.addtc {
+    display: none;
+}
+
 .sgtit {
     font-size: 15px;
     color: #737373;
@@ -1219,6 +1251,7 @@ aside {
 }
 
 .trescont {
+    text-align: center;
     padding: 30px 0;
     border: 1px solid #e8e8e8;
     border-radius: 5px;
@@ -1240,9 +1273,37 @@ aside {
         color: #737373;
         font-size: 15px;
     }
+
+    .prod {
+        position: relative;
+    }
+
+    .addtc h3 {
+        width: 100%;
+        background-color: #e72413;
+        color: #ffffff !important;
+        position: absolute;
+        bottom: 0px;
+        height: 45px;
+        @include flex(center, center);
+    }
+
+    .prod:hover {
+        .addtc {
+            display: block;
+        }
+    }
 }
 
 @media (max-width:1250px) {
+    .eees {
+        flex-direction: column;
+    }
+
+    .ins2 {
+        width: 100%;
+    }
+
     .prodi .prods {
         grid-template-columns: 1fr 1fr;
     }
@@ -1270,6 +1331,23 @@ aside {
 }
 
 @media (max-width: 900px) {
+
+    .inyour {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #flash {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+        align-items: center;
+    }
+
+    #tres {
+        grid-template-columns: 1fr;
+    }
+
     .prodi .prods {
         grid-template-columns: 1fr;
     }
@@ -1315,6 +1393,25 @@ aside {
 }
 
 @media (max-width: 700px) {
+
+    .inyour .buots{
+        flex-direction: column;
+    }
+
+    .carters .eees .prod {
+        flex-direction: column;
+
+        .bsd {
+            align-items: center;
+            width: 100%;
+            text-align: center;
+
+            p {
+                text-align: center;
+            }
+        }
+    }
+
     aside {
         min-width: 225px;
     }
@@ -1346,6 +1443,32 @@ aside {
 }
 
 @media (max-width: 500px) {
+    .inyour .buots a, .inyour .buots p{
+        width: 100%;
+    }
+    .carters .eees .prod .eezer {
+        width: 100%;
+        flex-direction: column;
+
+        .pimg,
+        .ptext,
+        .hidden,
+        .pprice {
+            width: 100%;
+        }
+
+        #incr {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ptext,
+        .hidden {
+            text-align: center;
+        }
+    }
+
     aside {
         width: 100%;
     }
@@ -1409,7 +1532,7 @@ aside {
         display: none !important;
     }
 
-    #as .hr{
+    #as .hr {
         display: none !important;
     }
 }

@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom'
 import ScrollToTop from './assets/ScrollToTop.jsx'
 import { WishlistProvider } from './context/WishlistContext.jsx'
 import { CartProvider } from './context/CartContext.jsx'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -14,6 +16,18 @@ createRoot(document.getElementById('root')).render(
         <BrowserRouter>
           <ScrollToTop />
           <App />
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar={true}
+            newestOnTop={true}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
         </BrowserRouter>
       </WishlistProvider>
     </CartProvider>

@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 import Star from '../assets/Star'
 import { useWishlist } from '../context/WishlistContext'
 import { useCart } from '../context/CartContext'
+import { toast } from 'react-toastify'
 
 function ProdCard({ product }) {
-    const { removeFromCart } = useCart()
-    const [quantity, setQuantity] = useState(0)
+    const { removeFromCart, updateQuantity, addToCart } = useCart()
+    const subTotal = product.price * product.quantity
     const { wishlist, toggleWishlist } = useWishlist()
     const isWished = wishlist.some(item => item.key === product.key)
-    const subTotal = product.price * quantity
 
     function handleWishlistClick(e) {
         e.preventDefault()
@@ -17,17 +17,13 @@ function ProdCard({ product }) {
         toggleWishlist(product)
     }
 
-    function handleIncrement(e) {
-        e.preventDefault()
-        e.stopPropagation()
-    }
     return (
         <Link to={`/products/${product.key}`} className="prod">
             <div className='eezer'>
                 <div className="pimg">
                     <div className="pbio">{product.pbio}</div>
                     <div className="pdeal">-{product.pdeal}</div>
-                    <img src={product.imgsrc} alt={product.alt} />
+                    <img src={product.imgsrc[0]} alt={product.alt} />
                     <div className="wished" onClick={handleWishlistClick}>
                         <i className={`bi ${isWished ? 'bi-suit-heart-fill red' : 'bi-suit-heart'}`}></i>
                     </div>
@@ -44,23 +40,50 @@ function ProdCard({ product }) {
                         <p className="amt">({product.reviews})</p>
                     </div>
                     <h6 className='sells'>Sold by <strong>{product.seller}</strong></h6>
-                    <div className="hidden" id='incr' onClick={handleIncrement}>
+                    <div className="hidden" id='incr'>
                         <div>
-                            <p onClick={() => setQuantity(prev => Math.max(prev - 1, 0))}>-</p>
-                            <input name='ee' id='ee' value={quantity}
-                                onChange={(e) => {
-                                    const val = Math.max(0, parseInt(e.target.value) || 0)
-                                    setQuantity(val)
-                                }} disabled></input>
-                            <p onClick={() => setQuantity(prev => prev + 1)}>+</p>
+                            <p onClick={(e) => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                                if (product.quantity > 1) updateQuantity(product.key, product.quantity - 1)
+                            }}>–</p>
+
+                            <input value={product.quantity} disabled />
+
+                            <p onClick={(e) => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                                updateQuantity(product.key, product.quantity + 1)
+                            }}>+</p>
                         </div>
-                        <span className='aqbynow' onClick={() => removeFromCart(product.key)}><i className="bi bi-trash"></i></span>
+                        <span
+                            className='aqbynow'
+                            onClick={(e) => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                                removeFromCart(product.key)
+                            }}
+                        >
+                            <i className="bi bi-trash"></i>
+                        </span>
+
                     </div>
                 </div>
             </div>
             <div className="hidden bsd">
                 <p>Subtotal</p>
                 <h2>Rs. {subTotal}</h2>
+            </div>
+            <div
+                className="addtc"
+                onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    addToCart(product, 1)
+                    toast.success(`${product.title} added to cart`)
+                }}
+            >
+                <h3>Add to Cart</h3>
             </div>
         </Link >
     )

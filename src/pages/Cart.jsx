@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 function Cart() {
   const { cart } = useCart()
+  const total = cart.reduce((sum, product) => sum + product.price * product.quantity, 0)
 
   return (
     <div className="tenochtitlan mid carters">
@@ -35,7 +36,7 @@ function Cart() {
             <div className='ins'>
               <div className="total">
                 <h3>Total</h3>
-                <h2>Rs. </h2>
+                <h2>Rs. {total}</h2>
               </div>
               <div className="buots dssad">
                 <Link to={'/products'}><p className='aqbynow'>Continue Shopping</p></Link>
